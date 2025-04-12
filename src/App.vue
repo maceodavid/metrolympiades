@@ -12,7 +12,7 @@ const showSidebar = computed(() => {
 </script>
 
 <template>
-  <div :class="{ page: showSidebar }">
+  <div>
     <AppSidebar v-if="showSidebar" />
 
     <main>
@@ -22,9 +22,3 @@ const showSidebar = computed(() => {
     </main>
   </div>
 </template>
-
-<style scoped>
-.page {
-  display: flex;
-}
-</style>
