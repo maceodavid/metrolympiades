@@ -16,12 +16,12 @@ function logout() {
       <h3 v-if="user">{{ user.team.name }}</h3>
     </div>
     <ul>
-      <li><a href="leaderboard">🏆 Classement général</a></li>
-      <li v-if="!user"><a href="register">Créer un compte</a></li>
-      <li v-if="!user"><a href="login">Se connecter</a></li>
-      <li v-if="user"><a href="team">👥 Mon équipe</a></li>
-      <li v-if="user"><a href="games">📅 Mes matchs</a></li>
-      <li v-if="user" @click="logout"><a>🔓 Se déconnecter</a></li>
+      <li><router-link to="/leaderboard">🏆 Classement général</router-link></li>
+      <li v-if="!user"><router-link to="/register">Créer un compte</router-link></li>
+      <li v-if="!user"><router-link to="/login">Se connecter</router-link></li>
+      <li v-if="user"><router-link to="/team">👥 Mon équipe</router-link></li>
+      <li v-if="user"><router-link to="/games">📅 Mes matchs</router-link></li>
+      <li v-if="user"><a @click="logout">🔓 Se déconnecter</a></li>
     </ul>
   </nav>
 </template>
