@@ -20,10 +20,6 @@ function addTeammate() {
   teamMembers.value.push('')
 }
 
-function renameTeammate(index, newName) {
-  teamMembers.value[index] = newName
-}
-
 function removeTeammate(index) {
   teamMembers.value.splice(index, 1)
 }
@@ -75,7 +71,6 @@ function updateTeam() {
   <div class="header">
     <h1>Mon équipe</h1>
     <button
-      class="save-btn"
       :disabled="!isFormValid || pageIsLoading || isUpdating"
       :class="{ loading: isUpdating }"
       @click="updateTeam"
@@ -114,19 +109,7 @@ function updateTeam() {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-top: 80px;
-  padding-bottom: 80px;
-}
-
-.header h1 {
-  margin: 0;
-}
-
-.save-btn {
-  padding: 6px 12px;
-  font-size: 14px;
-  border: 1px solid #aaa;
-  border-radius: 6px;
+  padding-top: 40px;
 }
 
 label {
@@ -166,7 +149,5 @@ label {
   width: 100%;
   padding: 8px;
   font-size: 14px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
 }
 </style>

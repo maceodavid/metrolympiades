@@ -1,25 +1,25 @@
 <script setup>
-import { ref, computed } from "vue";
-import { useRouter } from "vue-router";
+import { ref, computed } from 'vue'
+import { useRouter } from 'vue-router'
 
-const router = useRouter();
+const router = useRouter()
 
-const email = ref("");
-const password = ref("");
+const email = ref('')
+const password = ref('')
 
 const isFormValid = computed(() => {
-  return email.value.trim() && password.value.trim();
-});
+  return email.value.trim() && password.value.trim()
+})
 
-const isLoading = ref(false);
+const isLoading = ref(false)
 
 function login() {
-  isLoading.value = true;
+  isLoading.value = true
 
-  fetch("http://localhost:3000/auth/login", {
-    method: "POST",
+  fetch('http://localhost:3000/auth/login', {
+    method: 'POST',
     headers: {
-      "Content-Type": "application/json",
+      'Content-Type': 'application/json',
     },
     body: JSON.stringify({
       email: email.value,
@@ -28,20 +28,20 @@ function login() {
   })
     .then((res) => {
       if (!res.ok) {
-        throw new Error("Email ou mot de passe incorrect");
+        throw new Error('Email ou mot de passe incorrect')
       }
-      return res.json();
+      return res.json()
     })
     .then((data) => {
-      localStorage.setItem("user", JSON.stringify(data));
-      router.push("/");
+      localStorage.setItem('user', JSON.stringify(data))
+      router.push('/leaderboard')
     })
     .catch((err) => {
-      console.error(err);
+      console.error(err)
     })
     .finally(() => {
-      isLoading.value = false;
-    });
+      isLoading.value = false
+    })
 }
 </script>
 

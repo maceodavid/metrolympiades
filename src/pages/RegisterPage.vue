@@ -1,27 +1,32 @@
 <script setup>
-import { ref, computed } from "vue";
-import { useRouter } from "vue-router";
+import { ref, computed } from 'vue'
+import { useRouter } from 'vue-router'
 
-const router = useRouter();
+const router = useRouter()
 
-const username = ref("");
-const teamName = ref("");
-const email = ref("");
-const password = ref("");
+const username = ref('')
+const teamName = ref('')
+const email = ref('')
+const password = ref('')
 
 const isFormValid = computed(() => {
-  return !!username.value.trim() && !!teamName.value.trim() && !!email.value.trim() && !!password.value.trim();
-});
+  return (
+    !!username.value.trim() &&
+    !!teamName.value.trim() &&
+    !!email.value.trim() &&
+    !!password.value.trim()
+  )
+})
 
-const isLoading = ref(false);
+const isLoading = ref(false)
 
 function register() {
-  isLoading.value = true;
+  isLoading.value = true
 
-  fetch("http://localhost:3000/auth/register", {
-    method: "POST",
+  fetch('http://localhost:3000/auth/register', {
+    method: 'POST',
     headers: {
-      "Content-Type": "application/json",
+      'Content-Type': 'application/json',
     },
     body: JSON.stringify({
       username: username.value,
@@ -32,15 +37,15 @@ function register() {
   })
     .then((res) => res.json())
     .then((data) => {
-      localStorage.setItem("user", JSON.stringify(data));
-      router.push("/");
+      localStorage.setItem('user', JSON.stringify(data))
+      router.push('/leaderboard')
     })
     .catch((err) => {
-      console.error(err);
+      console.error(err)
     })
     .finally(() => {
-      isLoading.value = false;
-    });
+      isLoading.value = false
+    })
 }
 </script>
 

@@ -1,11 +1,11 @@
 <script setup>
-import { useUserData } from "@/composables/useUserData";
+import { useUserData } from '@/composables/useUserData'
 
-const { user } = useUserData();
+const { user } = useUserData()
 
 function logout() {
-  localStorage.removeItem("user");
-  location.reload();
+  localStorage.removeItem('user')
+  location.reload()
 }
 </script>
 
@@ -25,3 +25,34 @@ function logout() {
     </ul>
   </nav>
 </template>
+
+<style scoped>
+.sidebar {
+  width: 240px;
+  height: 100%;
+  background: var(--color-border);
+  border-right: 2px solid var(--color-border);
+  padding: 20px;
+  z-index: 1;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.sidebar-title {
+  margin-bottom: 50px;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar ul li {
+  margin-bottom: 15px;
+}
+
+.sidebar ul li a {
+  font-weight: normal;
+}
+</style>

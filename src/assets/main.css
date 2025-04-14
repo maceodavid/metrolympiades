@@ -145,7 +145,8 @@ button:disabled {
 button.loading {
   cursor: progress;
 }
-input {
+input,
+select {
   background: var(--color-bg-tertiary);
   border: none;
   border-radius: 10px;
@@ -228,35 +229,6 @@ a:hover {
   flex: 1;
 }
 
-.sidebar {
-  width: 240px;
-  height: 100%;
-  background: var(--color-border);
-  border-right: 2px solid var(--color-border);
-  padding: 20px;
-  z-index: 1;
-  position: fixed;
-  top: 0;
-  left: 0;
-}
-
-.sidebar-title {
-  margin-bottom: 50px;
-}
-
-.sidebar ul {
-  list-style: none;
-  padding: 0;
-}
-
-.sidebar ul li {
-  margin-bottom: 15px;
-}
-
-.sidebar ul li a {
-  font-weight: normal;
-}
-
 h1 {
-  margin: 40px;
+  padding: 40px;
 }
