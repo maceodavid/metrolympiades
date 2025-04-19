@@ -1,6 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
 
-import UserProfile from './pages/UserProfile.vue'
 import RegisterPage from './pages/RegisterPage.vue'
 import LoginPage from './pages/LoginPage.vue'
 import LeaderboardPage from './pages/LeaderboardPage.vue'
@@ -13,14 +12,6 @@ const routes = [
     path: '/',
     name: 'home',
     component: LeaderboardPage,
-  },
-  {
-    path: '/user/:username',
-    name: 'user',
-    component: UserProfile,
-    meta: {
-      requiresAuth: true,
-    },
   },
   {
     path: '/register',
