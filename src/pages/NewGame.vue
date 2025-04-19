@@ -68,7 +68,7 @@ function createMatch() {
     body: JSON.stringify({
       team2Id: opponent.value,
       activityId: activity.value,
-      startedAt: `${new Date().toISOString().match(/.*T/)[0]}${startTime.value}:00Z`,
+      startedAt: `${new Date().toISOString().split('T')[0]}T${startTime.value}:00Z`,
       team1Score: team1Score.value,
       team2Score: team2Score.value,
     }),

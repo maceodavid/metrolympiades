@@ -43,12 +43,7 @@ function createNewGame() {
   <p v-else-if="!matches.length">Aucun match pour le moment.</p>
 
   <div class="matchesList">
-    <Match
-      v-for="(teamInformation, index) in matches"
-      :key="teamInformation.team"
-      :teamInformation="teamInformation"
-      :index="index"
-    />
+    <Match v-for="match in matches" :key="match.id" :match="match" />
   </div>
 </template>
 

@@ -149,5 +149,6 @@ label {
   width: 100%;
   padding: 8px;
   font-size: 14px;
+  margin-bottom: 60px;
 }
 </style>
